@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    environment:
+      - FLASK_APP=main.py
+      - FLASK_RUN_HOST=0.0.0.0
+      - FLASK_RUN_PORT=5000
+    depends_on:
+      - db
+
+  db:
+    image: "alpine:latest"
+    environment:
+      - SQLALCHEMY_DATABASE_URI=sqlite:///users.db
+    volumes:
+      - .:/app 
+

@@ -1,0 +1,6 @@
+Flask
+Flask-RESTful
+Flask-SQLAlchemy
+Flask-Login
+Flask-RESTful-Swagger
+requests
